@@ -24,20 +24,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Push push = Push();
-    push.areNotificationsEnabled().then((bool isEnabled) {
-      if (isEnabled) {
-        push.startWork(enableDebug: !_isReleaseMode());
-      } else {
-        StreamSubscription<bool> _listenNotificationsPermission;
-        _listenNotificationsPermission =
-            push.notificationsPermission().listen((bool isEnabled) {
-          if (isEnabled) {
-            push.startWork(enableDebug: !_isReleaseMode());
-          }
-          _listenNotificationsPermission.cancel();
-        });
-        push.requestNotificationsPermission();
-      }
+    push.registerApp().then((_) {
+      push.startWork(enableDebug: !_isReleaseMode());
+      push.areNotificationsEnabled().then((bool isEnabled) {
+        if (!isEnabled) {
+          push.requestNotificationsPermission();
+        }
+      });
     });
     return PushProvider(
       push: push,

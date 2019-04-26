@@ -186,7 +186,7 @@ static NSString * const SHAREDPREF_KEY_HAS_BEEN_DETERMINED = @"fake_push_has_bee
 }
 
 - (void)didResumeRemoteNotification:(NSDictionary *)userInfo {
-    [_channel invokeMethod:METHOD_ONLAUNCHNOTIFICATION arguments:[self parseNotification:userInfo]];
+    [_channel invokeMethod:METHOD_ONRESUMENOTIFICATION arguments:[self parseNotification:userInfo]];
 }
 
 - (void)didReceiveRemoteNotification:(NSDictionary *)userInfo {
@@ -197,10 +197,10 @@ static NSString * const SHAREDPREF_KEY_HAS_BEEN_DETERMINED = @"fake_push_has_bee
     }
     if (contentAvailable == 1) {
         // 静默消息
-        [_channel invokeMethod:METHOD_ONLAUNCHNOTIFICATION arguments:[self parseMessage:userInfo]];
+        [_channel invokeMethod:METHOD_ONMESSAGE arguments:[self parseMessage:userInfo]];
     } else {
         // 通知推送
-        [_channel invokeMethod:METHOD_ONLAUNCHNOTIFICATION arguments:[self parseNotification:userInfo]];
+        [_channel invokeMethod:METHOD_ONNOTIFICATION arguments:[self parseNotification:userInfo]];
     }
 }
 

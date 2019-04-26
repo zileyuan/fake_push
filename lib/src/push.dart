@@ -4,10 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:meta/meta.dart';
 
 class Push {
-  Push() {
-    _channel.setMethodCallHandler(_handleMethod);
-  }
-
   static const String _METHOD_ARENOTIFICATIONSENABLED =
       'areNotificationsEnabled';
   static const String _METHOD_REQUESTNOTIFICATIONSPERMISSION =
@@ -50,6 +46,10 @@ class Push {
       _resumeNotificationStreamController =
       StreamController<Map<dynamic, dynamic>>.broadcast();
 
+  Future<void> registerApp() async {
+    _channel.setMethodCallHandler(_handleMethod);
+  }
+
   Future<dynamic> _handleMethod(MethodCall call) async {
     switch (call.method) {
       case _METHOD_ONNOTIFICATIONSPERMISSION:
@@ -73,15 +73,17 @@ class Push {
     }
   }
 
+  /// 通知开关是否打开
   Future<bool> areNotificationsEnabled() {
     return _channel.invokeMethod(_METHOD_ARENOTIFICATIONSENABLED);
   }
 
+  /// 请求打开通知开关
   Future<void> requestNotificationsPermission() {
     return _channel.invokeMethod(_METHOD_REQUESTNOTIFICATIONSPERMISSION);
   }
 
-  /// 允许通知
+  /// 请求打开通知开关 - 回调
   Stream<bool> notificationsPermission() {
     return _notificationsPermissionStreamController.stream;
   }
