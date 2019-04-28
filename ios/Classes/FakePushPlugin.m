@@ -234,6 +234,10 @@ static NSString * const SHAREDPREF_KEY_HAS_BEEN_DETERMINED = @"fake_push_has_bee
         }
     }
     
+    if (customContent.count == 0) {
+        return nil;
+    }
+    
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:customContent options:NSJSONWritingPrettyPrinted error:&error];
     if(!error) {
