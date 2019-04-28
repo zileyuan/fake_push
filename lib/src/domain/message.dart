@@ -14,5 +14,5 @@ class Message {
 
   final String title;
   final String content;
-  final String customContent;
+  final String customContent;// empty string or map
 }
