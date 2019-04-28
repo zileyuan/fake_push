@@ -15,7 +15,7 @@ void main() {
 
   if (Platform.isAndroid) {
     SystemUiOverlayStyle systemUiOverlayStyle =
-    const SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
   }
 }
@@ -72,8 +72,10 @@ class _HomeState extends State<Home> {
     super.initState();
     _message = widget.push.message().listen(_handleMessage);
     _notification = widget.push.notification().listen(_handleNotification);
-    _launchNotification = widget.push.launchNotification().listen(_handleLaunchNotification);
-    _resumeNotification = widget.push.resumeNotification().listen(_handleResumeNotification);
+    _launchNotification =
+        widget.push.launchNotification().listen(_handleLaunchNotification);
+    _resumeNotification =
+        widget.push.resumeNotification().listen(_handleResumeNotification);
   }
 
   @override
@@ -110,25 +112,21 @@ class _HomeState extends State<Home> {
 
   void _handleMessage(Message message) {
     print(
-        'message: ${message.title} - ${message.content} - ${message
-            .customContent}');
+        'message: ${message.title} - ${message.content} - ${message.customContent}');
   }
 
   void _handleNotification(Message notification) {
     print(
-        'notification: ${notification.title} - ${notification
-            .content} - ${notification.customContent}');
+        'notification: ${notification.title} - ${notification.content} - ${notification.customContent}');
   }
 
   void _handleLaunchNotification(Message notification) {
     print(
-        'launchNotification: ${notification.title} - ${notification
-            .content} - ${notification.customContent}');
+        'launchNotification: ${notification.title} - ${notification.content} - ${notification.customContent}');
   }
 
   void _handleResumeNotification(Message notification) {
     print(
-        'resumeNotification: ${notification.title} - ${notification
-            .content} - ${notification.customContent}');
+        'resumeNotification: ${notification.title} - ${notification.content} - ${notification.customContent}');
   }
 }

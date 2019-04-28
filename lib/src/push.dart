@@ -55,19 +55,20 @@ class Push {
         _notificationsPermissionStreamController.add(call.arguments as bool);
         break;
       case _METHOD_ONMESSAGE:
-        _messageStreamController.add(MessageSerializer().fromMap(call.arguments as Map<dynamic, dynamic>));
+        _messageStreamController.add(MessageSerializer()
+            .fromMap(call.arguments as Map<dynamic, dynamic>));
         break;
       case _METHOD_ONNOTIFICATION:
-        _notificationStreamController
-            .add(MessageSerializer().fromMap(call.arguments as Map<dynamic, dynamic>));
+        _notificationStreamController.add(MessageSerializer()
+            .fromMap(call.arguments as Map<dynamic, dynamic>));
         break;
       case _METHOD_ONLAUNCHNOTIFICATION:
-        _launchNotificationStreamController
-            .add(MessageSerializer().fromMap(call.arguments as Map<dynamic, dynamic>));
+        _launchNotificationStreamController.add(MessageSerializer()
+            .fromMap(call.arguments as Map<dynamic, dynamic>));
         break;
       case _METHOD_ONRESUMENOTIFICATION:
-        _resumeNotificationStreamController
-            .add(MessageSerializer().fromMap(call.arguments as Map<dynamic, dynamic>));
+        _resumeNotificationStreamController.add(MessageSerializer()
+            .fromMap(call.arguments as Map<dynamic, dynamic>));
         break;
     }
   }
