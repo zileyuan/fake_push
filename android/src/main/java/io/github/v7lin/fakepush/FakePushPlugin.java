@@ -70,7 +70,6 @@ public class FakePushPlugin implements MethodCallHandler, PluginRegistry.NewInte
     private static final String ARGUMENT_KEY_ACCOUNT = "account";
     private static final String ARGUMENT_KEY_TAGS = "tags";
 
-    public static final String ARGUMENT_KEY_RESULT_MSGID = "msgId";
     public static final String ARGUMENT_KEY_RESULT_TITLE = "title";
     public static final String ARGUMENT_KEY_RESULT_CONTENT = "content";
     public static final String ARGUMENT_KEY_RESULT_CUSTOMCONTENT = "customContent";
