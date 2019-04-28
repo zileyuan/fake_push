@@ -19,6 +19,13 @@ flutter版腾讯(信鸽)推送SDK
 
 [simple_pub_server](https://github.com/v7lin/simple_pub_server)
 
+## docs
+
+* [信鸽推送](https://xg.qq.com/)
+* [华为推送](https://developer.huawei.com/consumer/cn/console#/openCard/AppService/6)
+* [小米推送](https://dev.mi.com/console/appservice/push.html)
+* [魅族推送](https://open.flyme.cn/open-web/views/push.html)
+
 ## android
 
 ````
