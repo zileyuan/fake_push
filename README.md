@@ -1,8 +1,9 @@
 # fake_push
 
 [![Build Status](https://cloud.drone.io/api/badges/v7lin/fake_push/status.svg)](https://cloud.drone.io/v7lin/fake_push)
-[![GitHub tag](https://img.shields.io/github/tag/v7lin/fake_push.svg)](https://github.com/v7lin/fake_push/releases)
-[![pub package](https://img.shields.io/pub/v/fake_push.svg)](https://pub.dartlang.org/packages/fake_push)
+[![GitHub Tag](https://img.shields.io/github/tag/v7lin/fake_push.svg)](https://github.com/v7lin/fake_push/releases)
+[![Pub Package](https://img.shields.io/pub/v/fake_push.svg)](https://pub.dartlang.org/packages/fake_push)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/v7lin/fake_push/blob/master/LICENSE)
 
 flutter版腾讯(信鸽)推送SDK
 
